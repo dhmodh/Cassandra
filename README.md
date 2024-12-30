@@ -28,8 +28,8 @@ This short guide will help you set up a basic one-node cluster and demonstrate s
 $ tar -zxvf apache-cassandra-$VERSION.tar.gz
 $ cd apache-cassandra-$VERSION
 
-### Step 2: tart the Server 🚀
 
+### Step 2: tart the Server 🚀
 Run the startup script with the -f argument to keep Cassandra in the foreground and log to the console. Stop the server with Ctrl+C.
 ```bash
 $ bin/cassandra -f
