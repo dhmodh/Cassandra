@@ -1,0 +1,46 @@
+After completing all the Step from 1-3 then please start the cassandra service.
+
+When starting Cassandra for the first time, there are several key things you need to check to ensure it is running correctly:
+
+1. **Check Logs**:
+   - Review the Cassandra logs located in the `logs` directory (e.g., `system.log`) for any errors or warnings.
+   ```sh
+   tail -f /var/log/cassandra/system.log
+
+2. Verify Service Status:
+    - Ensure the Cassandra service is running.
+    Verify Service Status:
+    ```sh
+    sudo systemctl status cassandra
+
+3. Nodetool Status:
+    - Use nodetool to check the status of the nodes in the cluster.Nodetool Status:
+    ```sh
+    ./nodetool status
+
+4. Check Configuration:
+    - Verify that the configuration files (cassandra.yaml, jvm.options, etc.) are correctly set up and reflect the desired settings.
+
+5. Check Ports:
+    - Ensure that the necessary ports (e.g., 9042 for CQL, 7000 for intra-node communication) are open and listening.
+    ```sh
+    netstat -tuln | grep 9042
+
+6. Data Directories:
+    - Verify that the data directories specified in cassandra.yaml are correctly set up and have the appropriate permissions.
+
+7. Cluster Name:
+    - Ensure that the cluster_name in cassandra.yaml is correctly set and consistent across all nodes.
+
+8. Seed Nodes:
+    - Verify that the seed nodes are correctly configured in the seed_provider section of cassandra.yaml
+
+9. Memory and CPU Usage:
+    - Monitor the memory and CPU usage to ensure Cassandra is not consuming excessive resources.
+    ```sh
+    top
+
+10. CQLSH Connection:
+    - Test connecting to Cassandra using cqlsh to ensure it is accepting connections.
+    ```sh
+        cqlsh
