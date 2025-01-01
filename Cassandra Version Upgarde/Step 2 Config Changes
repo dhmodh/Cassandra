@@ -1,0 +1,17 @@
+Important configuration changes in Cassandra 4.x
+
+When upgrading Apache Cassandra, there are several key configuration changes you should be aware of. These changes can vary between versions, so it's important to consult the release notes for the specific versions you are upgrading from and to. However, here are some common configuration changes to consider:
+
+cassandra.yaml:
+
+1. cluster_name: Ensure the cluster name remains consistent.
+2. num_tokens: This setting may need adjustment based on the new version's recommendations.
+3. partitioner: Verify that the partitioner setting is compatible with the new version.
+4. seed_provider: Verify the seed nodes configuration.
+5. concurrent_reads, concurrent_writes, concurrent_counter_writes: These settings may have new recommended values.
+6. memtable_allocation_type: This setting might have new options or recommendations.
+7. endpoint_snitch: Ensure the snitch configuration is correct and compatible.
+
+cassandra-rackdc.properties:
+
+Verify and update the rack and datacenter properties if necessary.
