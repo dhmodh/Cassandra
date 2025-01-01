@@ -1,8 +1,16 @@
 ## For Cassandra Java must be install in the server
 sudo dnf install java-1.8.0-openjdk-devel   # For OpenJDK 8
+
+## Create one Cassandra user in OS
 sudo useradd -m -d /home/cassandra_user cassandra_user
 sudo passwd cassandra_user   # Set password
+
+## Grant Access to that user 
+sudo chown -R cassandra_user:cassandra_user /home/cassandra_user/apache-cassandra-4.0.13
+
+## chnage the user
+sudo su - cassandra_user
+
+## download the desire version of cassandra that you want to upgrade 
 wget https://dlcdn.apache.org/cassandra/4.0.13/apache-cassandra-4.0.13-bin.tar.gz
 tar -xzvf apache-cassandra-4.0.13-bin.tar.gz -C /home/cassandra_user
-sudo chown -R cassandra_user:cassandra_user /home/cassandra_user/apache-cassandra-4.0.13
-sudo su - cassandra_user
