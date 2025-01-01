@@ -120,3 +120,11 @@ case "$1" in
 esac
 
 exit 0
+
+# Below are the sample commands to start, stop, and check the status of the Cassandra service using systemctl:
+sudo systemctl daemon-reload
+sudo systemctl start cassandra
+sudo systemctl enable cassandra
+sudo systemctl status cassandra
+sudo systemctl restart cassandra
+sudo systemctl stop cassandra
